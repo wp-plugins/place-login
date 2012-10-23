@@ -33,7 +33,7 @@ if ( !class_exists( 'pLogin' ) ) :
  */
 class pLogin {
 	/** Version ************************************************************************/
-	public $version = '0.1';
+	public $version = '1.0';
 
 	// Paths
 	/** Basename of the Place Login plugin ************************************/
