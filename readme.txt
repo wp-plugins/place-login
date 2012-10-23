@@ -4,7 +4,7 @@ Donate link: http://boroniatechnologies.com/support-us
 Tags: login, sidebar, widget, place login, button login, form, register
 Requires at least: 3.3
 Tested up to: 3.4
-Stable tag: 4.3
+Stable tag: 0.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
