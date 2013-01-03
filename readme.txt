@@ -1,6 +1,6 @@
 === Place Login ===
 Contributors: lebasca
-Donate link: http://boroniatechnologies.com/support-us
+Donate link: http://boroniatechnologies.com/contribute
 Tags: login, sidebar, widget, place login, button login, form, register
 Requires at least: 3.3
 Tested up to: 3.4
