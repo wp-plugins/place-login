@@ -3,7 +3,7 @@
 Plugin Name: Place Login
 Plugin URI: http://boroniatechnologies.com/place-login
 Description: This plugin can add a login button or widget in any region of your web page.
-Version: 1.0
+Version: 0.1.1
 Author: Catherine Lebastard
 Author URI: http://www.boroniatechnologies.com
 License: GPLv2 or later
