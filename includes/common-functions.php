@@ -117,11 +117,11 @@ function plogin_user_options($user_ID, $name){
 					}
 				}
 				// Parse %USERNAME%
-				$link[0] = str_replace('%USERNAME%',sanitize_title($current_user->user_login),$link[0]);
-				$link[0] = str_replace('%username%',sanitize_title($current_user->user_login),$link[0]);
+				$link[0] = str_replace('%USERNAME%',$name,$link[0]);
+				$link[0] = str_replace('%username%',$name,$link[0]);
 				// Parse %USERID%
-				$link[0] = str_replace('%USERID%',$current_user->ID,$link[0]);
-				$link[0] = str_replace('%userid%',$current_user->ID,$link[0]);
+				$link[0] = str_replace('%USERID%',$user_ID,$link[0]);
+				$link[0] = str_replace('%userid%',$user_ID,$link[0]);
 				// Parse %PROFILE%
 				$link[0] = str_replace('%PROFILE%',plogin_get_url_vpage('profile'),$link[0]);
 				$link[0] = str_replace('%profile%',plogin_get_url_vpage('profile'),$link[0]);

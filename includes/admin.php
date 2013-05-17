@@ -118,7 +118,7 @@ class pLogin_Admin {
 	public function plogin_loggedinlinks_links(){
 ?>	
 		<textarea id="plogin_links" class="large-text" cols="50" rows="10" name="plogin_links"><?php echo get_option('plogin_links'); ?></textarea>
-		<label for="plogin_links"><?php _e( 'Enter one link per line. Note: Logout link will always show regardless. Tip: Add <code>|true</code> after a link to only show it to admin users or alternatively use a <code>|user_capability</code> and the link will only be shown to users with that capability (see <a href=\'http://codex.wordpress.org/Roles_and_Capabilities\' target=\'_blank\'>Roles and Capabilities</a>).<br/> You can type <code>%USERNAME%</code> and <code>%%USERID%%</code> which will be replaced by the user\'s info. Also, You can type <code>%PROFILE%</code> to get the link for the user profile. Default: <br/>&lt;a href="%PROFILE%"&gt;Dashboard&lt;/a&gt;', 'plogin' ); ?></label>
+		<label for="plogin_links"><?php _e( 'Enter one link per line. Note: Logout link will always show regardless. Tip: Add <code>|true</code> after a link to only show it to admin users or alternatively use a <code>|user_capability</code> and the link will only be shown to users with that capability (see <a href=\'http://codex.wordpress.org/Roles_and_Capabilities\' target=\'_blank\'>Roles and Capabilities</a>).<br/> You can type <code>%USERNAME%</code> and <code>%USERID%</code> which will be replaced by the user\'s info. Also, You can type <code>%PROFILE%</code> to get the link for the user profile. Default: <br/>&lt;a href="%PROFILE%"&gt;Dashboard&lt;/a&gt;', 'plogin' ); ?></label>
 <?php			
 	}
 

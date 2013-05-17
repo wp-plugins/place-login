@@ -3,13 +3,13 @@
 Plugin Name: Place Login
 Plugin URI: http://boroniatechnologies.com/place-login
 Description: This plugin can add a login button or widget in any region of your web page.
-Version: 0.1.1
+Version: 1.0.1
 Author: Catherine Lebastard
 Author URI: http://www.boroniatechnologies.com
 License: GPLv2 or later
 */
 /*
-    Copyright (c) 2012 Catherine Lebastard (email: clebastard@boroniatechnologies.com)
+    Copyright (c) 2012 - 2013 Catherine Lebastard (email: clebastard@boroniatechnologies.com)
 
     This program is free software; you can redistribute it and/or modify it under 
     the terms of the GNU General Public License as published by the Free Software 
@@ -33,7 +33,7 @@ if ( !class_exists( 'pLogin' ) ) :
  */
 class pLogin {
 	/** Version ************************************************************************/
-	public $version = '0.1.1';
+	public $version = '1.0';
 
 	// Paths
 	/** Basename of the Place Login plugin ************************************/

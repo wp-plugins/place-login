@@ -4,7 +4,7 @@ Donate link: http://boroniatechnologies.com/contribute
 Tags: login, sidebar, widget, place login, button login, form, register
 Requires at least: 3.3
 Tested up to: 3.4
-Stable tag: 0.1.1
+Stable tag: 1.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -46,8 +46,11 @@ The settings page is found in settings > Place Login.
 
 == Changelog ==
 
-= 0.1.1 =
+= 1.0.1 =
+* Fixed type %USERNAME% and %USERID%
+
+= 1.0.1 =
 * Plugin version updated
 
-= 0.1 =
+= 1.0 =
 * Plugin launched
