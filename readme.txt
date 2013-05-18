@@ -46,7 +46,7 @@ The settings page is found in settings > Place Login.
 
 == Changelog ==
 
-= 1.0.1 =
+= 1.1 =
 * Fixed type %USERNAME% and %USERID%
 
 = 1.0.1 =
