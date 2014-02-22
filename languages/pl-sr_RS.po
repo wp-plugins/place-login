@@ -1,0 +1,408 @@
+# Copyright (C) 2014 Place Login
+# This file is distributed under the same license as the Place Login package.
+msgid ""
+msgstr ""
+"Project-Id-Version: Place Login 1.1\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/tag/place-login\n"
+"POT-Creation-Date: 2014-02-01 01:16:37+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2014-02-13 12:20+0100\n"
+"Last-Translator: Borisa Djuraskovic <borisad@webhostinghub.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"X-Generator: Poedit 1.5.7\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Language: sr_RS\n"
+
+#: includes/admin.php:40
+msgid "Usage"
+msgstr "Korisnost"
+
+#: includes/admin.php:43
+msgid "Redirect"
+msgstr "Redirektnost"
+
+#: includes/admin.php:45
+msgid "After login"
+msgstr "Nakon logina"
+
+#: includes/admin.php:47
+msgid "After logout"
+msgstr "Posle logina"
+
+#: includes/admin.php:51
+msgid "Login links"
+msgstr "Linkovi logina"
+
+#: includes/admin.php:53
+msgid "Parent page"
+msgstr "Roditeljska stranica"
+
+#: includes/admin.php:55 includes/common-functions.php:212
+#: includes/common-functions.php:250
+msgid "Register"
+msgstr "Registruj"
+
+#: includes/admin.php:57
+msgid "Lost password"
+msgstr "Izgubljena šifra"
+
+#: includes/admin.php:61
+msgid "Logged in links"
+msgstr "ulogovano na linkove"
+
+#: includes/admin.php:63
+msgid "Links"
+msgstr "Linkovi"
+
+#: includes/admin.php:68
+msgid ""
+"To have the login link or button, you should use the following code in your "
+"template files: <br><code>&lt;?php if &#40; function_exists&#40; "
+"'plogin_form' &#41; &#41; plogin_form&#40;&#41;; ?&gt;</code>.<br/>If you "
+"want to have a login form in your sidebar, you should use the Place Login "
+"widget</code>"
+msgstr ""
+"Da biste imali link ili dugme za prijavljivanje , trebalo bi da koristite "
+"sledeći kod u template file: :<code>&lt;?php do_action('cl'); ?&gt;</code>."
+"<br/>Ako želite da imate login formu na sidebar-u, trebalo bi da koristite "
+"prilagođeni  >Custom Login widget</code>"
+
+#: includes/admin.php:72
+msgid "Url to redirect after the user login or logout."
+msgstr "Url za redirekciju nakon logina ili logout korisnika."
+
+#: includes/admin.php:78 includes/admin.php:85
+msgid "Leave blank to use the current page"
+msgstr "Ostavi prazno da bi ste koristili trenutnu stranicu"
+
+#: includes/admin.php:90
+msgid "Links to appear in the login form."
+msgstr "Linkovi koji se pojavljuju u login formi."
+
+#: includes/admin.php:96
+msgid "Create the default pages as its children"
+msgstr "Napravite default stranice kao decu"
+
+#: includes/admin.php:103 includes/admin.php:110
+msgid "Leave blank to use the default page"
+msgstr "Ostavi prazno da bi ste koristili default stranicu"
+
+#: includes/admin.php:115
+msgid "Links to appear once the user has logged in."
+msgstr "Linkovi se pojave korisniku kada se uloguje.  "
+
+#: includes/admin.php:121
+msgid ""
+"Enter one link per line. Note: Logout link will always show regardless. Tip: "
+"Add <code>|true</code> after a link to only show it to admin users or "
+"alternatively use a <code>|user_capability</code> and the link will only be "
+"shown to users with that capability (see <a href='http://codex.wordpress.org/"
+"Roles_and_Capabilities' target='_blank'>Roles and Capabilities</a>).<br/> "
+"You can type <code>%USERNAME%</code> and <code>%USERID%</code> which will be "
+"replaced by the user's info. Also, You can type <code>%PROFILE%</code> to "
+"get the link for the user profile. Default: <br/>&lt;a href=\"%PROFILE%\"&gt;"
+"Dashboard&lt;/a&gt;"
+msgstr ""
+"Unesite jedan link po rečenici. Beleška: Logout link će uvek biti prikazan. "
+"Savet: Dodati <code>|true</code> nakon linka da biste prikazali admin "
+"korisnicima kako da alternativno koriste <code>|user_capability</code> i "
+"link će biti prikazan korisnicima sa mogućnostima(pogledati <a href='http://"
+"codex.wordpress.org/Roles_and_Capabilities' target='_blank'>Roles and "
+"Capabilities</a>).<br/> You can type <code>%USERNAME%</code> and <code>%"
+"%USERID%%</code> which will be replaced by the user's info. Also, You can "
+"type <code>%PROFILE%</code> to get the link for the user profile. Default: "
+"<br/>&lt;a href=\"%PROFILE%\"&gt;Dashboard&lt;/a&gt;"
+
+#. Plugin Name of the plugin/theme
+#: includes/admin.php:128
+msgid "Place Login"
+msgstr "Mesto za login"
+
+#: includes/admin.php:139
+msgid "Place Login Options"
+msgstr "Opcije mesta za login"
+
+#: includes/admin.php:148
+msgid "Save Changes"
+msgstr "Sačuvati promene"
+
+#: includes/common-functions.php:147
+msgid "Username"
+msgstr "Korisničko ime:"
+
+#: includes/common-functions.php:148
+msgid "Usernames cannot be changed."
+msgstr "Korisničko ime ne može biti promenjeno."
+
+#: includes/common-functions.php:151 includes/common-functions.php:232
+msgid "First name"
+msgstr "Ime"
+
+#: includes/common-functions.php:155 includes/common-functions.php:236
+msgid "Last name"
+msgstr "Prezime"
+
+#: includes/common-functions.php:159
+msgid "E-mail"
+msgstr "E-mail"
+
+#: includes/common-functions.php:163
+msgid "New password:"
+msgstr "Nova šifra:"
+
+#: includes/common-functions.php:165
+msgid ""
+"If you would like to change the password type a new one; otherwise, leave it "
+"blank"
+msgstr "Ako želite da promenite šifru ukucajte novu, ako ne ostavite prazno"
+
+#: includes/common-functions.php:168
+msgid "Confirm new password:"
+msgstr "Potvrdite novu šifru:"
+
+#: includes/common-functions.php:170
+msgid "Type the new password again"
+msgstr "Tip nove šifre opet"
+
+#: includes/common-functions.php:172
+msgid "Strength indicator"
+msgstr "Pokazatelj snage"
+
+#: includes/common-functions.php:173
+msgid ""
+"Hint: The password should be at least seven characters long. To make it "
+"stronger, use upper and lower case letters, numbers and symbols like ! \" ? "
+"$ % ^ &amp; )."
+msgstr ""
+"Savet :lozinka treba da ima najmanje sedam znakova . Da bi bila jača , "
+"koristite gornja i donja slova , brojeve i simbole ! \" ? $ % ^ &amp; )."
+
+#: includes/common-functions.php:177
+msgid "Update Profile"
+msgstr "Update Profila"
+
+#: includes/common-functions.php:188
+msgid "Username:"
+msgstr "Korisničko ime:"
+
+#: includes/common-functions.php:192
+msgid "Password:"
+msgstr "Šifra:"
+
+#: includes/common-functions.php:200
+msgid "Remember Me"
+msgstr "Zapamti me"
+
+#: includes/common-functions.php:202
+msgid "Log In"
+msgstr "Uloguj se"
+
+#: includes/common-functions.php:216
+msgid "Lost Password?"
+msgstr "Izgubili ste šifru?"
+
+#: includes/common-functions.php:228
+msgid "Username <em>(required)</em>"
+msgstr "Korisničko ime<em>(potreban)</em>"
+
+#: includes/common-functions.php:240
+msgid "E-mail <em>(required)</em>"
+msgstr "E-mail <em>(potreban)</em>"
+
+#: includes/common-functions.php:244
+msgid "Password <em>(required)</em>"
+msgstr "Šifra<em>(potreban)</em>"
+
+#: includes/common-functions.php:246
+msgid "7 characters minimum, no spaces. Case sensitive"
+msgstr "minimum 7 karaktera, nema prostora. Osetljivo na veličinu slova"
+
+#: includes/common-functions.php:262
+msgid "Username or E-mail:"
+msgstr "Korisničko ime E-mail:"
+
+#: includes/common-functions.php:268
+msgid "Get New Password"
+msgstr "Nova šifra"
+
+#: includes/widget.php:45
+msgid "The login widget."
+msgstr "Widget za ulogovanje"
+
+#: includes/widget.php:48
+msgid "Place Login Widget"
+msgstr "Mesto za widget za ulogovanje"
+
+#: includes/widget.php:89
+msgid "Title:"
+msgstr "Naslov:"
+
+#: includes/widget.php:93
+msgid "To set up options, please go to the <a href=\"%s\">settings</a>"
+msgstr "Da biste podesili opcije idite na <a href=\"%s\">postavke</a>"
+
+#: place-login.php:261
+msgid "Your registration has been successful."
+msgstr "Vaša registracija je bila uspešna."
+
+#: place-login.php:264
+msgid "Check your e-mail for your new password."
+msgstr "Proverite svoju e-poštu za vašu novu lozinku."
+
+#: place-login.php:267
+msgid "Your profile information has been updated."
+msgstr "Informacije profila je ažuriran."
+
+#: place-login.php:298 place-login.php:313
+msgid ""
+"<strong>ERROR</strong>: The username or password you entered is incorrect."
+msgstr ""
+"<strong>GRESKA</strong> :Korisničko ime ili lozinka koje ste uneli nisu "
+"tačni."
+
+#: place-login.php:316
+msgid ""
+"<strong>ERROR</strong>: Please enter your username and password to login."
+msgstr "<strong>GRESKA</strong> :Unesite vaše korisničko ime i lozinku."
+
+#: place-login.php:327
+msgid "<strong>ERROR</strong>: The passwords do no match."
+msgstr "<strong>GRESKA</strong> :Lozinke se ne utakmicu."
+
+#: place-login.php:342
+msgid ""
+"<strong>ERROR</strong>: Couldn&#8217;t update your profile... please contact "
+"the <a href=\"mailto:%s\">webmaster</a> !"
+msgstr ""
+"<strong>GRESKA</strong> :ažurirate svoj profil ... kontaktirajte<a href="
+"\"mailto:%s\">webmaster</a> !"
+
+#: place-login.php:359
+msgid "<strong>ERROR</strong>: Please enter a username."
+msgstr "<strong>GRESKA</strong> :Unesite korisničko ime."
+
+#: place-login.php:361
+msgid ""
+"<strong>ERROR</strong>: This username is invalid because it uses illegal "
+"characters. Please enter a valid username."
+msgstr ""
+"<strong>GRESKA</strong> :Ovo korisničko ime je nevažeći zato što koristi "
+"nedozvoljene znakove. Molimo unesite važeće korisničko ime."
+
+#: place-login.php:364 place-login.php:367
+msgid ""
+"<strong>ERROR</strong>: This username is already registered, please choose "
+"another one."
+msgstr ""
+"<strong>GRESKA</strong> :Ovo korisničko ime je već registrovano , molimo vas "
+"da izaberete drugu."
+
+#: place-login.php:365
+msgid ""
+"<strong>ERROR</strong>: This username is already registered, please contact "
+"the Administrator to add the user to this blog."
+msgstr ""
+"<strong>GREŠKA</strong>: Ovo korisničko ime je već registrovano, "
+"kontaktirajte Administratora da doda korisnika na ovaj blog"
+
+#: place-login.php:372
+msgid "<strong>ERROR</strong>: Please type your e-mail address."
+msgstr "<strong>GRESKA</strong> :Molimo unesite vašu e - mail adresu."
+
+#: place-login.php:374
+msgid "<strong>ERROR</strong>: The email address is not correct."
+msgstr "<strong>GRESKA</strong> :Email adresa nije ispravna."
+
+#: place-login.php:377
+msgid ""
+"<strong>ERROR</strong>: This email is already registered, please choose "
+"another one."
+msgstr ""
+"<strong>GRESKA</strong> :Ova e-mail je već registrovan , molimo vas da "
+"izaberete drugu."
+
+#: place-login.php:382
+msgid "<strong>ERROR</strong>: Please type your user password."
+msgstr "<strong>GRESKA</strong> :Molimo unesite vašu korisničku lozinku."
+
+#: place-login.php:384
+msgid ""
+"<strong>ERROR</strong>: The password should be at least seven characters long"
+msgstr "<strong>GRESKA</strong> :Lozinka treba da bude najmanje sedam znakova"
+
+#: place-login.php:410
+msgid ""
+"<strong>ERROR</strong>: Couldn&#8217;t register you... please contact the <a "
+"href=\"mailto:%s\">webmaster</a> !"
+msgstr ""
+"<strong>GRESKA</strong> :Couldn&#8217;t register vas ... kontaktirajte<a "
+"href=\"mailto:%s\">webmaster-a</a> !"
+
+#: place-login.php:424
+msgid "<strong>ERROR</strong>: Enter a username or e-mail address."
+msgstr "<strong>GRESKA</strong> :Unesite korisničko ime ili e-mail adresu."
+
+#: place-login.php:428
+msgid ""
+"<strong>ERROR</strong>: There is no user registered with that email address."
+msgstr ""
+"<strong>GRESKA</strong> :Nema registrovanih korisnika sa tom adresom e-pošte."
+
+#: place-login.php:438
+msgid "<strong>ERROR</strong>: Invalid username or e-mail."
+msgstr "<strong>GRESKA</strong> :Pogrešno korisničko ime ili e-mail."
+
+#: place-login.php:449
+msgid "Password reset is not allowed for this user"
+msgstr "Resetovanje šifre nije dozvoljeno za ovog korisnika"
+
+#: place-login.php:461
+msgid "Someone requested that the password be reset for the following account:"
+msgstr "Neko je tražio dalozinka bude resetovan za sledeći račun:"
+
+#: place-login.php:463
+msgid "Username: %s"
+msgstr "Korisničko ime: %s"
+
+#: place-login.php:464
+msgid "If this was a mistake, just ignore this email and nothing will happen."
+msgstr ""
+"Ako je ovo bila greška, samo ignorisati ovaj email i ništa se neće desiti."
+
+#: place-login.php:465
+msgid "To reset your password, visit the following address:"
+msgstr "Da biste ponovo postavili lozinku, posetite sledeću adresu:"
+
+#: place-login.php:475
+msgid "[%s] Password Reset"
+msgstr "[%s] Poništavanje lozinke"
+
+#: place-login.php:481
+msgid ""
+"<strong>ERROR</strong>: The e-mail could not be sent. Possible reason: your "
+"host may have disabled the mail() function..."
+msgstr ""
+"<strong>GRESKA</strong>: E-pošta ne može biti poslata. Mogući razlog: vaš "
+"domaćin je možda onemogućio mail ( ) funkciju..."
+
+#. Plugin URI of the plugin/theme
+msgid "http://boroniatechnologies.com/place-login"
+msgstr "http://boroniatechnologies.com/place-login"
+
+#. Description of the plugin/theme
+msgid ""
+"This plugin can add a login button or widget in any region of your web page."
+msgstr ""
+"Ovaj plugin može da doda dugme za ulogovanje u bilo kojem delu vaše web "
+"stranice"
+
+#. Author of the plugin/theme
+msgid "Catherine Lebastard"
+msgstr "Catherine Lebastard"
+
+#. Author URI of the plugin/theme
+msgid "http://www.boroniatechnologies.com"
+msgstr "http://www.boroniatechnologies.com"
