@@ -1,0 +1,425 @@
+# Copyright (C) 2014 Place Login
+# This file is distributed under the same license as the Place Login package.
+msgid ""
+msgstr ""
+"Project-Id-Version: Place Login 1.1\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/tag/place-login\n"
+"POT-Creation-Date: 2014-02-01 01:16:37+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2014-02-20 15:47-0800\n"
+"Last-Translator: \n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"X-Generator: Poedit 1.6.3\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: es\n"
+
+#: includes/admin.php:40
+msgid "Usage"
+msgstr "Uso"
+
+#: includes/admin.php:43
+msgid "Redirect"
+msgstr "Redirección"
+
+#: includes/admin.php:45
+msgid "After login"
+msgstr "Después de entrar en la sesión"
+
+#: includes/admin.php:47
+msgid "After logout"
+msgstr "Después de cerrar la sesión"
+
+#: includes/admin.php:51
+msgid "Login links"
+msgstr "Enlaces de inicio de sesión"
+
+#: includes/admin.php:53
+msgid "Parent page"
+msgstr "Página padre"
+
+#: includes/admin.php:55 includes/common-functions.php:212
+#: includes/common-functions.php:250
+msgid "Register"
+msgstr "Registrar"
+
+#: includes/admin.php:57
+msgid "Lost password"
+msgstr "Recuperar la contraseña"
+
+#: includes/admin.php:61
+msgid "Logged in links"
+msgstr "Enlaces después de entrar en la sesión"
+
+#: includes/admin.php:63
+msgid "Links"
+msgstr "Enlaces"
+
+#: includes/admin.php:68
+msgid ""
+"To have the login link or button, you should use the following code in your "
+"template files: <br><code>&lt;?php if &#40; function_exists&#40; "
+"'plogin_form' &#41; &#41; plogin_form&#40;&#41;; ?&gt;</code>.<br/>If you "
+"want to have a login form in your sidebar, you should use the Place Login "
+"widget</code>"
+msgstr ""
+"Para tener el enlace o el botón de inicio de sesión, utilice el siguiente "
+"código en su plantilla de archivos: <code>&lt;?php do_action('cl'); ?&gt;</"
+"code>.<br/> Si usted quiere tener un formulario de acceso en la barra "
+"lateral, se debe utilizar el Custom Login widget</ code>"
+
+#: includes/admin.php:72
+msgid "Url to redirect after the user login or logout."
+msgstr ""
+"URL para redireccionar después de que el usuario entró o cerró la sesión."
+
+#: includes/admin.php:78 includes/admin.php:85
+msgid "Leave blank to use the current page"
+msgstr "Dejar en blanco para usar la página actual"
+
+#: includes/admin.php:90
+msgid "Links to appear in the login form."
+msgstr "Enlaces a aparecer en el formulario de acceso."
+
+#: includes/admin.php:96
+msgid "Create the default pages as its children"
+msgstr "Crear las páginas predeterminadas como sus hijos"
+
+#: includes/admin.php:103 includes/admin.php:110
+msgid "Leave blank to use the default page"
+msgstr "Dejar en blanco para usar la página por defecto"
+
+#: includes/admin.php:115
+msgid "Links to appear once the user has logged in."
+msgstr "Enlaces a aparecer una vez que el usuario haya iniciado sesión"
+
+#: includes/admin.php:121
+msgid ""
+"Enter one link per line. Note: Logout link will always show regardless. Tip: "
+"Add <code>|true</code> after a link to only show it to admin users or "
+"alternatively use a <code>|user_capability</code> and the link will only be "
+"shown to users with that capability (see <a href='http://codex.wordpress.org/"
+"Roles_and_Capabilities' target='_blank'>Roles and Capabilities</a>).<br/> "
+"You can type <code>%USERNAME%</code> and <code>%USERID%</code> which will be "
+"replaced by the user's info. Also, You can type <code>%PROFILE%</code> to "
+"get the link for the user profile. Default: <br/>&lt;a href=\"%PROFILE%\"&gt;"
+"Dashboard&lt;/a&gt;"
+msgstr ""
+"Escriba un enlace por línea. Nota: El enlace de Logout siempre será "
+"mostrado. Sugerencia: Añadir <code>| true</ code> después del enlace para "
+"que sea  mostrado solo a los administradores de usuarios o alternativamente "
+"puede usar <code>|user_capability</code> y el enlace sólo será mostrado a "
+"los usuarios con esa capacidad (ver <a href = 'http://codex.wordpress.org/"
+"Roles_and_Capabilities' target = '_blank'>Roles y Capacidades</a>).<br/> "
+"Usted puede escribir <code>% USERNAME%</code> y <code>%% USERID%%</code> el "
+"cuál será reemplazado por la información del usuario. También puede escribir "
+"<code>% PROFILE% </code> para obtener el enlace del perfil de usuario. Por "
+"defecto: <br/>&lt;a href=\"%PROFILE%\"&gt;Dashboard&lt;/a&gt;"
+
+#. Plugin Name of the plugin/theme
+#: includes/admin.php:128
+msgid "Place Login"
+msgstr "Lugar del inicio de sesión"
+
+#: includes/admin.php:139
+msgid "Place Login Options"
+msgstr "Opciones del lugar del inicio de sesión"
+
+#: includes/admin.php:148
+msgid "Save Changes"
+msgstr "Grabar cambios"
+
+#: includes/common-functions.php:147
+msgid "Username"
+msgstr "Nombre de usuario"
+
+#: includes/common-functions.php:148
+msgid "Usernames cannot be changed."
+msgstr "Los nombres de usuarios no se puede cambiar."
+
+#: includes/common-functions.php:151 includes/common-functions.php:232
+msgid "First name"
+msgstr "Nombre"
+
+#: includes/common-functions.php:155 includes/common-functions.php:236
+msgid "Last name"
+msgstr "Apellido"
+
+#: includes/common-functions.php:159
+msgid "E-mail"
+msgstr "Correo electrónico"
+
+#: includes/common-functions.php:163
+msgid "New password:"
+msgstr "Nueva contraseña:"
+
+#: includes/common-functions.php:165
+msgid ""
+"If you would like to change the password type a new one; otherwise, leave it "
+"blank"
+msgstr ""
+"Si desea cambiar el tipo de contraseña, porfavor ingrese una nueva o déjelo "
+"en blanco"
+
+#: includes/common-functions.php:168
+msgid "Confirm new password:"
+msgstr "Confirmar nueva contraseña:"
+
+#: includes/common-functions.php:170
+msgid "Type the new password again"
+msgstr "Escriba la nueva contraseña de nuevo"
+
+#: includes/common-functions.php:172
+msgid "Strength indicator"
+msgstr "Indicador de fuerza"
+
+#: includes/common-functions.php:173
+msgid ""
+"Hint: The password should be at least seven characters long. To make it "
+"stronger, use upper and lower case letters, numbers and symbols like ! \" ? "
+"$ % ^ &amp; )."
+msgstr ""
+"Sugerencia: La contraseña debe ser de al menos siete caracteres. Para que "
+"sea más fuerte, usar mayúsculas y minúsculas, números y símbolos como lo "
+"siguente ! \" ? $ % ^ &amp; )."
+
+#: includes/common-functions.php:177
+msgid "Update Profile"
+msgstr "Actualizar Perfil"
+
+#: includes/common-functions.php:188
+msgid "Username:"
+msgstr "Nombre de Usuario:"
+
+#: includes/common-functions.php:192
+msgid "Password:"
+msgstr "Contraseña:"
+
+#: includes/common-functions.php:200
+msgid "Remember Me"
+msgstr "Recordarme"
+
+#: includes/common-functions.php:202
+msgid "Log In"
+msgstr "Inicio de sesión"
+
+#: includes/common-functions.php:216
+msgid "Lost Password?"
+msgstr "Perdió su contraseña?"
+
+#: includes/common-functions.php:228
+msgid "Username <em>(required)</em>"
+msgstr "Nombre de usuario <em>(requerido)</ em>"
+
+#: includes/common-functions.php:240
+msgid "E-mail <em>(required)</em>"
+msgstr "E-mail <em>(requerido)</ em>"
+
+#: includes/common-functions.php:244
+msgid "Password <em>(required)</em>"
+msgstr "Contraseña <em>(requerido)</ em>"
+
+#: includes/common-functions.php:246
+msgid "7 characters minimum, no spaces. Case sensitive"
+msgstr "Mínimo 7 caracteres, sin espacios. Sensible a mayúsculas y minúsculas"
+
+#: includes/common-functions.php:262
+msgid "Username or E-mail:"
+msgstr "Nombre de usuario o correo electrónico:"
+
+#: includes/common-functions.php:268
+msgid "Get New Password"
+msgstr "Obtener una nueva contraseña"
+
+#: includes/widget.php:45
+msgid "The login widget."
+msgstr "Interface de inicio de sesión"
+
+#: includes/widget.php:48
+msgid "Place Login Widget"
+msgstr "Interface del lugar del inicio de sesión"
+
+#: includes/widget.php:89
+msgid "Title:"
+msgstr "Título:"
+
+#: includes/widget.php:93
+msgid "To set up options, please go to the <a href=\"%s\">settings</a>"
+msgstr ""
+"Para configurar las opciones, por favor vaya a <a href=\"%s"
+"\">configuraciones</a>"
+
+#: place-login.php:261
+msgid "Your registration has been successful."
+msgstr "Se ha registrado exitosamente."
+
+#: place-login.php:264
+msgid "Check your e-mail for your new password."
+msgstr "Revise su correo electrónico para su nueva contraseña."
+
+#: place-login.php:267
+msgid "Your profile information has been updated."
+msgstr "La información de su perfil ha sido actualizado."
+
+#: place-login.php:298 place-login.php:313
+msgid ""
+"<strong>ERROR</strong>: The username or password you entered is incorrect."
+msgstr ""
+"<strong> ERROR </ strong>: El nombre de usuario o la contraseña que ha "
+"introducido no es correcta."
+
+#: place-login.php:316
+msgid ""
+"<strong>ERROR</strong>: Please enter your username and password to login."
+msgstr ""
+"<strong> ERROR </ strong>: Por favor, ingrese su nombre de usuario y "
+"contraseña para iniciar sesión."
+
+#: place-login.php:327
+msgid "<strong>ERROR</strong>: The passwords do no match."
+msgstr "<strong> ERROR </ strong>: Las contraseñas no coinciden."
+
+#: place-login.php:342
+msgid ""
+"<strong>ERROR</strong>: Couldn&#8217;t update your profile... please contact "
+"the <a href=\"mailto:%s\">webmaster</a> !"
+msgstr ""
+"<strong> ERROR </ strong>: No se pudo actualizar su perfil ... por favor "
+"póngase en contacto con el <a href=\"mailto:%s\"> webmaster </ a>!"
+
+#: place-login.php:359
+msgid "<strong>ERROR</strong>: Please enter a username."
+msgstr "<strong> ERROR </ strong>: Por favor ingrese el nombre de usuario."
+
+#: place-login.php:361
+msgid ""
+"<strong>ERROR</strong>: This username is invalid because it uses illegal "
+"characters. Please enter a valid username."
+msgstr ""
+"<strong> ERROR </ strong>: Este nombre de usuario no es válido, ya que "
+"utiliza caracteres no válidos. Por favor, introduzca un nombre de usuario "
+"válido."
+
+#: place-login.php:364 place-login.php:367
+msgid ""
+"<strong>ERROR</strong>: This username is already registered, please choose "
+"another one."
+msgstr ""
+"<strong> ERROR </ strong>: Este nombre de usuario ya está registrado, por "
+"favor elija otro."
+
+#: place-login.php:365
+msgid ""
+"<strong>ERROR</strong>: This username is already registered, please contact "
+"the Administrator to add the user to this blog."
+msgstr ""
+"<strong> ERROR </ strong>: Este nombre de usuario ya está registrado, por "
+"favor contactar al Administrador para agregar el usuario."
+
+#: place-login.php:372
+msgid "<strong>ERROR</strong>: Please type your e-mail address."
+msgstr ""
+"<strong> ERROR </ strong>: Por favor escriba su dirección de correo "
+"electrónico."
+
+#: place-login.php:374
+msgid "<strong>ERROR</strong>: The email address is not correct."
+msgstr "<strong> ERROR </ strong>: El correo electrónico es incorrecto."
+
+#: place-login.php:377
+msgid ""
+"<strong>ERROR</strong>: This email is already registered, please choose "
+"another one."
+msgstr ""
+"<strong> ERROR </ strong>: Esta dirección de correo electrónico ya está "
+"registrado, por favor elija otro."
+
+#: place-login.php:382
+msgid "<strong>ERROR</strong>: Please type your user password."
+msgstr ""
+"<strong> ERROR </ strong>: Por favor, escriba su contraseña de usuario."
+
+#: place-login.php:384
+msgid ""
+"<strong>ERROR</strong>: The password should be at least seven characters long"
+msgstr ""
+"<strong> ERROR </ strong>: La contraseña debe tener al menos siete caracteres"
+
+#: place-login.php:410
+msgid ""
+"<strong>ERROR</strong>: Couldn&#8217;t register you... please contact the <a "
+"href=\"mailto:%s\">webmaster</a> !"
+msgstr ""
+"<strong> ERROR </ strong>: No se pudo registrar ... por favor póngase en "
+"contacto con el <a href=\"mailto:%s\"> webmaster </ a>!"
+
+#: place-login.php:424
+msgid "<strong>ERROR</strong>: Enter a username or e-mail address."
+msgstr ""
+"<strong> ERROR </ strong>: Escriba un nombre de usuario o la dirección de e-"
+"mail."
+
+#: place-login.php:428
+msgid ""
+"<strong>ERROR</strong>: There is no user registered with that email address."
+msgstr ""
+"<strong> ERROR </ strong>: No hay ningún usuario registrado con esa "
+"dirección de correo electrónico."
+
+#: place-login.php:438
+msgid "<strong>ERROR</strong>: Invalid username or e-mail."
+msgstr "<strong> ERROR </ strong>: nombre de usuario no válido o e-mail."
+
+#: place-login.php:449
+msgid "Password reset is not allowed for this user"
+msgstr "No esta permitido el restablecimiento de contraseña para este usuario"
+
+#: place-login.php:461
+msgid "Someone requested that the password be reset for the following account:"
+msgstr ""
+"Alguien solicitó el restablecimiento de contraseña para la siguiente cuenta:"
+
+#: place-login.php:463
+msgid "Username: %s"
+msgstr "Nombre de usuario:% s"
+
+#: place-login.php:464
+msgid "If this was a mistake, just ignore this email and nothing will happen."
+msgstr "Si esto fue un error, simplemente ignore este mensaje."
+
+#: place-login.php:465
+msgid "To reset your password, visit the following address:"
+msgstr "Para restablecer su contraseña, visite la siguiente dirección:"
+
+#: place-login.php:475
+msgid "[%s] Password Reset"
+msgstr "[%s] Restablecimiento de contraseña"
+
+#: place-login.php:481
+msgid ""
+"<strong>ERROR</strong>: The e-mail could not be sent. Possible reason: your "
+"host may have disabled the mail() function..."
+msgstr ""
+"<strong> ERROR </ strong>: El correo electrónico no se ha podido enviar. "
+"Posible causa: su servido de web puede haber desactivado la función mail "
+"() ... Restablecimiento de contraseña"
+
+#. Plugin URI of the plugin/theme
+msgid "http://boroniatechnologies.com/place-login"
+msgstr "http://boroniatechnologies.com/place-login"
+
+#. Description of the plugin/theme
+msgid ""
+"This plugin can add a login button or widget in any region of your web page."
+msgstr ""
+"Este plugin puede añadir un botón de inicio de sesión o un widget en "
+"cualquier región de su página web."
+
+#. Author of the plugin/theme
+msgid "Catherine Lebastard"
+msgstr "Catherine Lebastard"
+
+#. Author URI of the plugin/theme
+msgid "http://www.boroniatechnologies.com"
+msgstr "http://www.boroniatechnologies.com"
