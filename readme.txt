@@ -1,4 +1,4 @@
-=== Place Login ===
+﻿=== Place Login ===
 Contributors: lebasca
 Donate link: http://boroniatechnologies.com/contribute
 Tags: login, sidebar, widget, place login, button login, form, register
@@ -19,7 +19,7 @@ Also, you can use a template tag to create a login button instead of using the l
 = Translators =
 
 * Spanish (es_ES) - [Catherine Lebastard](http://www.boroniatechnologies.com/)
-* Serbian (sr_RS) - [Borisa Djuraskovi​c] (http://www.webhostinghub.com/)
+* Serbian (sr_RS) - [Borisa Djuraskovi​c](http://www.webhostinghub.com/)
 
 If you have created your own language pack, or have an update of an existing one, you can contact [me](http://boroniatechnologies.com/contact/) so that I can bundle it into Column Posts. You can download the latest [POT file](http://plugins.svn.wordpress.org/column-posts/trunk/languages/column-posts.pot).
 
