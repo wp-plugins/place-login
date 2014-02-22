@@ -95,6 +95,7 @@ function plogin_form(){
 }
 
 function plogin_user_options($user_ID, $name){
+    global $plogin;
 	//if (get_option('sidebar_login_avatar')=='1') 
 	echo '<div id="menubox">
 		  <div class="avatar_container">'.get_avatar($user_ID, $size = '35').'
@@ -144,37 +145,37 @@ function plogin_profile_form(){
 		<h1>Edit Profile</h1>
 		<form id="plogin-editprofileform" action="" method="post">
 			<p>
-				<label for="user_login"><?php _e('Username', 'plogin') ?><br />
+				<label for="user_login"><?php _e('Username', 'pl') ?><br />
 				<input type="text" name="log" id="user_login" value="<?php echo esc_attr($current_user->user_login); ?>" disabled="disabled" class="regular-text" /> <span class="description"><?php _e('Usernames cannot be changed.'); ?></span></label>
 			</p>
 			<p>
-				<label for="first_name"><?php _e('First name', 'plogin') ?><br />
+				<label for="first_name"><?php _e('First name', 'pl') ?><br />
 				<input type="text" name="first_name" id="first_name" value="<?php echo esc_attr(stripslashes($current_user->first_name)); ?>" size="25" tabindex="20" /></label>
 			</p>
 			<p>
-				<label for="last_name"><?php _e('Last name', 'plogin') ?><br />
+				<label for="last_name"><?php _e('Last name', 'pl') ?><br />
 				<input type="text" name="last_name" id="last_name" value="<?php echo esc_attr(stripslashes($current_user->last_name)); ?>" size="25" tabindex="20" /></label>
 			</p>
 			<p>
-				<label for="user_email"><?php _e('E-mail', 'plogin') ?><br />
+				<label for="user_email"><?php _e('E-mail', 'pl') ?><br />
 				<input type="email" name="email" id="user_email" value="<?php echo esc_attr(stripslashes($current_user->user_email)); ?>" size="25" tabindex="30" /></label>
 			</p>
 			<p>
-				<label for="pass1"><?php _e('New password:','plogin') ?><br />
+				<label for="pass1"><?php _e('New password:','pl') ?><br />
 				<input type="password" name="pass1" id="pass1" size="20" value="" autocomplete="off" tabindex="40" />
-				<span class="description"><?php _e('If you would like to change the password type a new one; otherwise, leave it blank','plogin'); ?></span></label>
+				<span class="description"><?php _e('If you would like to change the password type a new one; otherwise, leave it blank','pl'); ?></span></label>
 			</p>
 			<p>
-				<label for="pass2"><?php _e('Confirm new password:','plogin') ?><br />
+				<label for="pass2"><?php _e('Confirm new password:','pl') ?><br />
 				<input type="password" name="pass2" id="pass2" size="20" value="" autocomplete="off" tabindex="50"  />
-				<span class="description"><?php _e('Type the new password again','plogin'); ?></span></label><br />
+				<span class="description"><?php _e('Type the new password again','pl'); ?></span></label><br />
 				<div class="pass-check">
-				<div id="pass-strength-result"><?php _e('Strength indicator','plogin'); ?></div>
-				<p class="description indicator-hint"><?php _e('Hint: The password should be at least seven characters long. To make it stronger, use upper and lower case letters, numbers and symbols like ! " ? $ % ^ &amp; ).','plogin'); ?></p></div>
+				<div id="pass-strength-result"><?php _e('Strength indicator','pl'); ?></div>
+				<p class="description indicator-hint"><?php _e('Hint: The password should be at least seven characters long. To make it stronger, use upper and lower case letters, numbers and symbols like ! " ? $ % ^ &amp; ).','pl'); ?></p></div>
 			</p>
 			<br>
 			<p class="submit">
-				<input type="submit" name="wp-submit" id="wp-submit" value="<?php _e('Update Profile', 'plogin'); ?>" tabindex="100" />
+				<input type="submit" name="wp-submit" id="wp-submit" value="<?php _e('Update Profile', 'pl'); ?>" tabindex="100" />
 			</p>
 		</form>
 	</div>
@@ -185,11 +186,11 @@ function plogin_login_form(){
 	<div class="plogin-form">
 	<form id="plogin-loginform" action="" method="post">
 		<p>
-			<label for="user_login"><?php _e('Username:','plogin') ?></label><br />
+			<label for="user_login"><?php _e('Username:','pl') ?></label><br />
 			<input type="text" name="log" id="user_login" value="<?php echo esc_attr($_POST['user_login']); ?>" size="20" />
 		</p>
 		<p>
-			<label for="user_pass"><?php _e('Password:','plogin') ?></label><br />
+			<label for="user_pass"><?php _e('Password:','pl') ?></label><br />
 			<input type="password" name="pwd" id="user_pass" value="" size="20" />
 		</p>
 	<?php 
@@ -209,11 +210,11 @@ function plogin_login_form(){
 		if (get_option('users_can_register')){ 
 			$pageurl = get_option('plogin_register');
 			if (!$pageurl || empty($pageurl)) $pageurl = plogin_get_url_vpage('register');
-			$links = '<li><a href="' .$pageurl .'" rel="nofollow">'.__('Register','plogin').'</a></li>';
+			$links = '<li><a href="' .$pageurl .'" rel="nofollow">'.__('Register','pl').'</a></li>';
 		}
 		$pageurl = get_option('plogin_lostpwd');
 		if (!$pageurl || empty($pageurl)) $pageurl = plogin_get_url_vpage('lostpwd');
-		$links .= '<li><a href="' .$pageurl .'" rel="nofollow">' .__('Lost Password?','plogin') .'</a></li>';
+		$links .= '<li><a href="' .$pageurl .'" rel="nofollow">' .__('Lost Password?','pl') .'</a></li>';
 		if ($links) echo '<ul>'.$links.'</ul>';	
 	?>
 	</div>
@@ -225,29 +226,29 @@ function plogin_register_form(){
 		<h1>Registration</h1>
 		<form id="plogin-registerform" action="" method="post">
 			<p>
-				<label for="user_login"><?php _e('Username <em>(required)</em>', 'plogin') ?><br />
+				<label for="user_login"><?php _e('Username <em>(required)</em>', 'pl') ?><br />
 				<input type="text" name="log" id="user_login" value="<?php if (isset($_POST['user_login'])) echo esc_attr(stripslashes($_POST['user_login'])); ?>" size="20" tabindex="10" /></label>
 			</p>
 			<p>
-				<label for="first_name"><?php _e('First name', 'plogin') ?><br />
+				<label for="first_name"><?php _e('First name', 'pl') ?><br />
 				<input type="text" name="first_name" id="first_name" value="<?php if (isset($_POST['first_name'])) echo esc_attr(stripslashes($_POST['first_name'])); ?>" size="25" tabindex="20" /></label>
 			</p>
 			<p>
-				<label for="last_name"><?php _e('Last name', 'plogin') ?><br />
+				<label for="last_name"><?php _e('Last name', 'pl') ?><br />
 				<input type="text" name="last_name" id="last_name" value="<?php if (isset($_POST['last_name'])) echo esc_attr(stripslashes($_POST['last_name'])); ?>" size="25" tabindex="30" /></label>
 			</p>
 			<p>
-				<label for="user_email"><?php _e('E-mail <em>(required)</em>') ?><br />
+				<label for="user_email"><?php _e('E-mail <em>(required)</em>', 'pl') ?><br />
 				<input type="email" name="email" id="user_email" value="<?php if (isset($_POST['user_email'])) echo esc_attr(stripslashes($_POST['user_email'])); ?>" size="25" tabindex="40" /></label>
 			</p>
 			<p>
-				<label for="user_pass"><?php _e('Password <em>(required)</em>', 'plogin') ?><br />
+				<label for="user_pass"><?php _e('Password <em>(required)</em>', 'pl') ?><br />
 				<input type="password" name="pwd" id="user_pass" value="<?php if (isset($_POST['user_pass'])) echo esc_attr(stripslashes(trim($_POST['user_pass']))); ?>" size="20" tabindex="50" />
-				<span class="description"><?php _e('7 characters minimum, no spaces. Case sensitive','plogin'); ?></span></label>
+				<span class="description"><?php _e('7 characters minimum, no spaces. Case sensitive','pl'); ?></span></label>
 			</p>
 			<br>
 			<p class="submit">
-				<input type="submit" name="wp-submit" id="wp-submit" value="<?php _e('Register', 'plogin'); ?>" tabindex="100" />
+				<input type="submit" name="wp-submit" id="wp-submit" value="<?php _e('Register', 'pl'); ?>" tabindex="100" />
 			</p>
 		</form>
 	</div>
@@ -259,7 +260,7 @@ function plogin_lostpwd_form(){
 		<h1>Password reset</h1>
 		<form id="plogin-lostpasswordform" action="" method="post">
 			<p>
-				<label for="user_login" ><?php _e('Username or E-mail:', 'plogin') ?><br />
+				<label for="user_login" ><?php _e('Username or E-mail:', 'pl') ?><br />
 				<input type="text" name="log" id="user_login" value="<?php if (isset($_POST['user_login'])) echo esc_attr(stripslashes($_POST['user_login'])); ?>" size="20" tabindex="10" /></label>
 			</p>
 			<br>

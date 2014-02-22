@@ -3,9 +3,11 @@
 Plugin Name: Place Login
 Plugin URI: http://boroniatechnologies.com/place-login
 Description: This plugin can add a login button or widget in any region of your web page.
-Version: 1.1
+Version: 1.1.1
 Author: Catherine Lebastard
 Author URI: http://www.boroniatechnologies.com
+Text Domain: pl
+Domain Path: /languages/
 License: GPLv2 or later
 */
 /*
@@ -33,7 +35,7 @@ if ( !class_exists( 'pLogin' ) ) :
  */
 class pLogin {
 	/** Version ************************************************************************/
-	public $version = '1.1';
+	public $version = '1.1.1';
 
 	// Paths
 	/** Basename of the Place Login plugin ************************************/
@@ -74,7 +76,7 @@ class pLogin {
 		$this->basename      = plugin_basename( $this->file );
 		$this->plugin_dir    = plugin_dir_path( $this->file );
 		$this->plugin_url    = plugin_dir_url( $this->file );
-		$this->lang_dir      = dirname( $this->basename) .'languages';
+		$this->lang_dir      = basename(dirname( $this->basename)) .'/languages';
 		$this->script_dir    = $this->plugin_url .'js';
 		$this->css_dir    = $this->plugin_url .'css';
 		$this->template_themedir = get_stylesheet_directory() .'/templates'; 
@@ -100,14 +102,17 @@ class pLogin {
 	private function setup_actions(){		
 		//admin
 		if ( is_admin() ) plogin_admin();
-	
+
+		// register text domain
+		load_plugin_textdomain('pl', false, $this->lang_dir);
+		
 		//Virtual pages
 		add_filter('rewrite_rules_array', array($this, 'vpage_insertrules'));
 		add_filter('query_vars', array($this, 'vpage_queryvars'));
 		remove_filter('wp_head', 'rel_canonical');
 		add_filter('wp_head',array($this,'plogin_rel_canonical'));
 		add_action('template_include',array($this,'vpage_template'));
-	
+		
 		//Widget
 		add_action( 'wp_enqueue_scripts', array($this, 'login_style') );
 		add_action( 'widgets_init', array( 'plogin_Widget', 'register_widget') );
@@ -258,13 +263,13 @@ class pLogin {
 	public function process_message( $user_option ){
 		switch ($user_option){
 			case 'register':
-				$message = __('Your registration has been successful.', 'plogin');
+				$message = __('Your registration has been successful.', 'pl');
 				break;
 			case 'get new password':
-				$message = __('Check your e-mail for your new password.', 'plogin');
+				$message = __('Check your e-mail for your new password.', 'pl');
 				break;
 			case 'update profile':
-				$message = __('Your profile information has been updated.', 'plogin');
+				$message = __('Your profile information has been updated.', 'pl');
 				break;
 		}
 		return $message;
@@ -295,7 +300,7 @@ class pLogin {
 
 		if( is_multisite() ){
 			if ( $userdata['ID'] & !empty($creds['user_password']) ){
-				if ( !plogin_is_registered_bloguser($userdata['ID']) ) return new WP_Error( 'incorrect_login', __( '<strong>ERROR</strong>: The username or password you entered is incorrect.' ) );
+				if ( !plogin_is_registered_bloguser($userdata['ID']) ) return new WP_Error( 'incorrect_login', __( '<strong>ERROR</strong>: The username or password you entered is incorrect.','pl' ) );
 			}			
 		}		
 		
@@ -310,10 +315,10 @@ class pLogin {
 		}else {
 			if ( $user->errors ){
 				if ( isset($user->errors['incorrect_password']) || isset($user->errors['invalid_username']) ){
-					return new WP_Error( 'incorrect_login', __( '<strong>ERROR</strong>: The username or password you entered is incorrect.' ) );
+					return new WP_Error( 'incorrect_login', __( '<strong>ERROR</strong>: The username or password you entered is incorrect.','pl' ) );
 				}
 			}else{
-					$user->add( 'empty_username', __( '<strong>ERROR</strong>: Please enter your username and password to login.' , 'plogin') );
+					$user->add( 'empty_username', __( '<strong>ERROR</strong>: Please enter your username and password to login.' , 'pl') );
 			}
 			return $user;
 		}
@@ -324,7 +329,7 @@ class pLogin {
 		$errors = new WP_Error();
 		
 		if ($userdata['password1'] != $userdata['password2']) 
-			$errors->add( 'mismatch_password', __( '<strong>ERROR</strong>: The passwords do no match.' , 'plogin') );
+			$errors->add( 'mismatch_password', __( '<strong>ERROR</strong>: The passwords do no match.' , 'pl') );
 
 		if ( $errors->get_error_code())
 			return $errors;
@@ -339,7 +344,7 @@ class pLogin {
 		
 		$user_id = wp_update_user( $user_data );
 		if ( ! $user_id ) {
-			$errors->add( 'updatefail', sprintf( __( '<strong>ERROR</strong>: Couldn&#8217;t update your profile... please contact the <a href="mailto:%s">webmaster</a> !' ), get_option( 'admin_email' ) ) );
+			$errors->add( 'updatefail', sprintf( __( '<strong>ERROR</strong>: Couldn&#8217;t update your profile... please contact the <a href="mailto:%s">webmaster</a> !','pl' ), get_option( 'admin_email' ) ) );
 			return $errors;
 		}
 		
@@ -356,32 +361,32 @@ class pLogin {
 		// Check the username
 		$sanitized_user_login = sanitize_user($user_login);
 		if ( $sanitized_user_login == '' ) {
-			$errors->add( 'empty_username', __( '<strong>ERROR</strong>: Please enter a username.' , 'plogin' ) );
+			$errors->add( 'empty_username', __( '<strong>ERROR</strong>: Please enter a username.' , 'pl' ) );
 		} elseif ( ! validate_username( $user_login ) ) {
-			$errors->add( 'invalid_username', __( '<strong>ERROR</strong>: This username is invalid because it uses illegal characters. Please enter a valid username.' , 'plogin' ) );
+			$errors->add( 'invalid_username', __( '<strong>ERROR</strong>: This username is invalid because it uses illegal characters. Please enter a valid username.' , 'pl' ) );
 		} elseif ( username_exists( $sanitized_user_login ) ) {
 			if (is_multisite()) {
-				if ( plogin_is_registered_bloguser($userdata['ID']) ) $errors->add( 'username_exists', __( '<strong>ERROR</strong>: This username is already registered, please choose another one.' , 'plogin' ) );				
-				else $errors->add( 'username_exists', __( '<strong>ERROR</strong>: This username is already registered, please contact the Administrator to add the user to this blog.' , 'plogin' ) );
+				if ( plogin_is_registered_bloguser($userdata['ID']) ) $errors->add( 'username_exists', __( '<strong>ERROR</strong>: This username is already registered, please choose another one.' , 'pl' ) );				
+				else $errors->add( 'username_exists', __( '<strong>ERROR</strong>: This username is already registered, please contact the Administrator to add the user to this blog.' , 'pl' ) );
 			}else
-				$errors->add( 'username_exists', __( '<strong>ERROR</strong>: This username is already registered, please choose another one.' , 'plogin' ) );
+				$errors->add( 'username_exists', __( '<strong>ERROR</strong>: This username is already registered, please choose another one.' , 'pl' ) );
 		}
 		
 		// Check the e-mail address
 		if ( $user_email == '' ) {
-			$errors->add( 'empty_email', __( '<strong>ERROR</strong>: Please type your e-mail address.' , 'plogin' ) );
+			$errors->add( 'empty_email', __( '<strong>ERROR</strong>: Please type your e-mail address.' , 'pl' ) );
 		} elseif ( ! is_email( $user_email ) ) {
-			$errors->add( 'invalid_email', __( '<strong>ERROR</strong>: The email address is not correct.', 'plogin' ) );
+			$errors->add( 'invalid_email', __( '<strong>ERROR</strong>: The email address is not correct.', 'pl' ) );
 			$user_email = '';
 		} elseif ( email_exists( $user_email ) ) {
-			$errors->add( 'email_exists', __( '<strong>ERROR</strong>: This email is already registered, please choose another one.', 'plogin' ) );
+			$errors->add( 'email_exists', __( '<strong>ERROR</strong>: This email is already registered, please choose another one.', 'pl' ) );
 		}
 	
 		// Check the user password
 		if ( trim($user_password) == '' ){
-			$errors->add( 'empty_password', __( '<strong>ERROR</strong>: Please type your user password.', 'plogin' ) );
+			$errors->add( 'empty_password', __( '<strong>ERROR</strong>: Please type your user password.', 'pl' ) );
 		} elseif (strlen(trim($user_password)) < 7){
-			$errors->add( 'password_length', __('<strong>ERROR</strong>: The password should be at least seven characters long', 'plogin' ) );
+			$errors->add( 'password_length', __('<strong>ERROR</strong>: The password should be at least seven characters long', 'pl' ) );
 		}
 	
 		if ( $errors->get_error_code())
@@ -390,7 +395,7 @@ class pLogin {
 		/*$user_pass = wp_generate_password( 12, false);
 		$user_id = wp_create_user( $sanitized_user_login, $user_pass, $user_email );
 		if ( ! $user_id ) {
-			$proc_errors->add( 'registerfail', sprintf( __( '<strong>ERROR</strong>: Couldn&#8217;t register you... please contact the <a href="mailto:%s">webmaster</a> !' ), get_option( 'admin_email' ) ) );
+			$proc_errors->add( 'registerfail', sprintf( __( '<strong>ERROR</strong>: Couldn&#8217;t register you... please contact the <a href="mailto:%s">webmaster</a> !','pl' ), get_option( 'admin_email' ) ) );
 			return $proc_errors;
 		}
 
@@ -407,7 +412,7 @@ class pLogin {
 		);
 		$user_id = wp_insert_user( $user_data );
 		if ( ! $user_id ) {
-			$errors->add( 'registerfail', sprintf( __( '<strong>ERROR</strong>: Couldn&#8217;t register you... please contact the <a href="mailto:%s">webmaster</a> !' ), get_option( 'admin_email' ) ) );
+			$errors->add( 'registerfail', sprintf( __( '<strong>ERROR</strong>: Couldn&#8217;t register you... please contact the <a href="mailto:%s">webmaster</a> !','pl' ), get_option( 'admin_email' ) ) );
 			return $errors;
 		}
 		
@@ -421,11 +426,11 @@ class pLogin {
 		$errors = new WP_Error();
 
 		if ( empty( $user ) ) {
-			$errors->add('empty_username', __('<strong>ERROR</strong>: Enter a username or e-mail address.'));
+			$errors->add('empty_username', __('<strong>ERROR</strong>: Enter a username or e-mail address.','pl'));
 		} else if ( strpos( $user, '@' ) ) {
 			$user_data = get_user_by( 'email', trim( $user ) );
 			if ( empty( $user_data ) )
-				$errors->add('invalid_email', __('<strong>ERROR</strong>: There is no user registered with that email address.'));
+				$errors->add('invalid_email', __('<strong>ERROR</strong>: There is no user registered with that email address.','pl'));
 		} else {
 			$login = trim($user);
 			$user_data = get_user_by('login', $login);
@@ -435,7 +440,7 @@ class pLogin {
 			return $errors;
 
 		if ( !$user_data ) {
-			$errors->add('invalidcombo', __('<strong>ERROR</strong>: Invalid username or e-mail.'));
+			$errors->add('invalidcombo', __('<strong>ERROR</strong>: Invalid username or e-mail.','pl'));
 			return $errors;
 		}
 
@@ -446,7 +451,7 @@ class pLogin {
 		$allow = apply_filters('allow_password_reset', true, $user_data->ID);
 
 		if ( ! $allow )
-			return new WP_Error('no_password_reset', __('Password reset is not allowed for this user'));
+			return new WP_Error('no_password_reset', __('Password reset is not allowed for this user','pl'));
 		else if ( is_wp_error($allow) )
 			return $allow;
 
@@ -458,11 +463,11 @@ class pLogin {
 			// Now insert the new md5 key into the db
 			$wpdb->update($wpdb->users, array('user_activation_key' => $key), array('user_login' => $user_login));
 		}
-		$message = __('Someone requested that the password be reset for the following account:') . "\r\n\r\n";
+		$message = __('Someone requested that the password be reset for the following account:','pl') . "\r\n\r\n";
 		$message .= network_site_url() . "\r\n\r\n";
-		$message .= sprintf(__('Username: %s'), $user_login) . "\r\n\r\n";
-		$message .= __('If this was a mistake, just ignore this email and nothing will happen.') . "\r\n\r\n";
-		$message .= __('To reset your password, visit the following address:') . "\r\n\r\n";
+		$message .= sprintf(__('Username: %s','pl'), $user_login) . "\r\n\r\n";
+		$message .= __('If this was a mistake, just ignore this email and nothing will happen.','pl') . "\r\n\r\n";
+		$message .= __('To reset your password, visit the following address:','pl') . "\r\n\r\n";
 		$message .= network_site_url("wp-login.php?action=rp&key=$key&login=" . rawurlencode($user_login), 'login') . "\r\n";
 
 		if ( is_multisite() )
@@ -472,13 +477,13 @@ class pLogin {
 			// we want to reverse this for the plain text arena of emails.
 			$blogname = wp_specialchars_decode(get_option('blogname'), ENT_QUOTES);
 
-		$title = sprintf( __('[%s] Password Reset'), $blogname );
+		$title = sprintf( __('[%s] Password Reset','pl'), $blogname );
 
 		$title = apply_filters('retrieve_password_title', $title);
 		$message = apply_filters('retrieve_password_message', $message, $key);
 
 		if ( $message && !wp_mail($user_email, $title, $message) ) {
-			$errors->add('sent_error', __('<strong>ERROR</strong>: The e-mail could not be sent. Possible reason: your host may have disabled the mail() function...', 'plogin'));
+			$errors->add('sent_error', __('<strong>ERROR</strong>: The e-mail could not be sent. Possible reason: your host may have disabled the mail() function...', 'pl'));
 			return $errors;
 		}
 		

@@ -2,9 +2,9 @@
 Contributors: lebasca
 Donate link: http://boroniatechnologies.com/contribute
 Tags: login, sidebar, widget, place login, button login, form, register
-Requires at least: 3.3
-Tested up to: 3.4
-Stable tag: 1.1
+Requires at least: 3.6
+Tested up to: 3.8
+Stable tag: 1.1.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -15,6 +15,13 @@ Add a login widget in your sidebar or login button in any part of your page.
 Place Login is a WordPress plugin that offers the same functionalities like most login widgets but it has default pages for Registration and Lost Password actions. 
 
 Also, you can use a template tag to create a login button instead of using the login widget. 
+
+= Translators =
+
+* Spanish (es_ES) - [Catherine Lebastard](http://www.boroniatechnologies.com/)
+* Serbian (sr_RS) - [Borisa Djuraskovi​c] (http://www.webhostinghub.com/)
+
+If you have created your own language pack, or have an update of an existing one, you can contact [me](http://boroniatechnologies.com/contact/) so that I can bundle it into Column Posts. You can download the latest [POT file](http://plugins.svn.wordpress.org/column-posts/trunk/languages/column-posts.pot).
 
 == Installation ==
 
@@ -45,6 +52,8 @@ The settings page is found in settings > Place Login.
 [Please visit my site for screenshots](http://boroniatechnologies.com/place-login/).
 
 == Changelog ==
+= 1.1.1 =
+* Fixed the translation of this plugin
 
 = 1.1 =
 * Fixed type %USERNAME% and %USERID%

@@ -42,10 +42,10 @@ class plogin_Widget extends WP_Widget {
 	function plogin_Widget() {
 		$widget_ops = apply_filters( 'plogin_widget_options', array(
 			'classname'   => 'plogin_widget',
-			'description' => __( 'The login widget.', 'plogin' )
+			'description' => __( 'The login widget.', 'pl' )
 		) );
 
-		parent::WP_Widget( false, __( 'Place Login Widget', 'plogin' ), $widget_ops );
+		parent::WP_Widget( false, __( 'Place Login Widget', 'pl' ), $widget_ops );
 	}
 
 	function widget( $args, $instance ) {
@@ -86,11 +86,11 @@ class plogin_Widget extends WP_Widget {
 		$title    = !empty( $instance['title'] )    ? esc_attr( $instance['title'] )    : '';
 ?>
 		<p>
-			<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:', 'plogin' ); ?>
+			<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:', 'pl' ); ?>
 			<input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo $title; ?>" /></label>
 		</p>		
 <?php		
-		echo '<p>' .sprintf(__('To set up options, please go to the <a href="%s">settings</a>','ccp'),'options-general.php?page=plogin') .'</p>';
+		echo '<p>' .sprintf(__('To set up options, please go to the <a href="%s">settings</a>','pl'),'options-general.php?page=plogin') .'</p>';
 	}
 }
 ?>
